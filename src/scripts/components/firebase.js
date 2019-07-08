@@ -26,12 +26,14 @@ const FirebaseComponent = {
   convertData(data) {
     var results = [];
 
-    Object.keys(data).forEach(function (key) {
-      var item = data[key];
-      item.key = key;
+    if (data) {
+      Object.keys(data).forEach(function (key) {
+        var item = data[key];
+        item.key = key;
 
-      results.push(item);
-    });
+        results.push(item);
+      });
+    }
 
     return results;
   },

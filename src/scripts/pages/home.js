@@ -54,7 +54,7 @@ const Homepage = {
    * @param {Object} postUpdated
    */
   updatePost(id, postUpdated) {
-    FirebaseComponent.add('posts', id, postUpdated)
+    FirebaseComponent.update('posts', id, postUpdated)
   },
 
   /**
@@ -62,7 +62,7 @@ const Homepage = {
    * @param {String} id
    */
   removePost(id) {
-    FirebaseComponent.add('posts', id)
+    FirebaseComponent.remove('posts', id)
   }
 
 };
