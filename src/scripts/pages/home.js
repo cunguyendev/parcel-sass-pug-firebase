@@ -5,7 +5,7 @@
 import Common from '../common.js';
 import FirebaseComponent from '../components/firebase.js';
 
-const Homepage = {
+const HomePage = {
   init() {
     Common.init();
 
@@ -67,4 +67,4 @@ const Homepage = {
 
 };
 
-Homepage.init();
+HomePage.init();

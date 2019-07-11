@@ -1,15 +1,15 @@
 
 /**
- * 404 scripts
+ * Contct scripts
  */
 
 //  Import something
 
-const Errorpage = {
+const ContactPage = {
   init() {
     // Do something
-  }
+  },
 
 };
 
-Errorpage.init();
+ContactPage.init();
