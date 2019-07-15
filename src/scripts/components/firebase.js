@@ -90,6 +90,56 @@ const FirebaseComponent = {
   remove(source, id) {
     let ref = firebase.database().ref(`${source}/${id}`);
     return ref.remove();
+  },
+
+  /**
+   *
+   * @param {String} email email
+   * @param {String} password password
+   */
+  signInWithEmailAndPassword(email, password) {
+    const data = firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(function() {
+        return {
+          ok: true,
+          user: firebase.auth().currentUser
+        };
+      })
+      .catch(function(error) {
+        return {
+          ok: false,
+          error: error.message
+        };
+      });
+
+    return data;
+  },
+
+  /**
+   *
+   * @param {String} email email
+   * @param {String} password password
+   */
+  signUpWithEmailAndPassword(email, password) {
+    let data = firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(function() {
+        return {
+          ok: true,
+          user: firebase.auth().currentUser
+        };
+      })
+      .catch(function(error) {
+        return {
+          ok: false,
+          error: error.message
+        };
+      });
+
+    return data;
   }
 };
 
