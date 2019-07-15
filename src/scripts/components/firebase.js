@@ -12,7 +12,7 @@ const FirebaseComponent = {
       projectId: process.env.PROJECT_ID,
       storageBucket: process.env.STORAGE_BUCKET,
       messagingSenderId: process.env.MESSAGING_SENDER_ID,
-      appId: process.env.APP_ID,
+      appId: process.env.APP_ID
     };
 
     // Initialize Firebase
@@ -27,7 +27,7 @@ const FirebaseComponent = {
     var results = [];
 
     if (data) {
-      Object.keys(data).forEach(function (key) {
+      Object.keys(data).forEach(function(key) {
         var item = data[key];
         item.key = key;
 
@@ -47,7 +47,7 @@ const FirebaseComponent = {
    */
   get(source, id, successCallback, errorCallback) {
     let ref = firebase.database().ref(source + id);
-    return ref.once('value', successCallback, errorCallback);
+    return ref.once("value", successCallback, errorCallback);
   },
 
   /**
@@ -58,7 +58,7 @@ const FirebaseComponent = {
    */
   getAll(source, successCallback, errorCallback) {
     let ref = firebase.database().ref(source);
-    return ref.on('value', successCallback, errorCallback);
+    return ref.on("value", successCallback, errorCallback);
   },
 
   /**
