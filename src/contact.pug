@@ -1,21 +1,12 @@
-doctype html
-html(lang="")
-  head
-    title Contact Us | Website Name
-    include templates/head
-  body
+extends templates/layout/main
 
-    //- Header
-    include templates/header
+block head
+  title Contact
+  meta(name="description" content="Description for contact page")
+  meta(name="keywords" content="")
 
-    //- Main content
-    section.main-content
-      .container
-        h2 This is contact pages
+block content
+  p This is contact page
 
-    //- Footer
-    include templates/footer
-
-    //- Scripts
-    include templates/scripts
-    script(src="scripts/pages/contact.js")
+block scripts
+  script(src="scripts/pages/contact.js")

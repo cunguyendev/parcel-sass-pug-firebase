@@ -1,21 +1,13 @@
-doctype html
-html(lang="")
-  head
-    title Index | Website Name
-    include templates/head
-  body
+extends templates/layout/main
 
-    //- Header
-    include templates/header
+block head
+  title Index | Website Name
+  meta(name="description" content="Description for home page")
+  meta(name="keywords" content="")
 
-    //- Main content
-    section.main-content
-      .container
-        h2 This is index pages
+block content
+  include templates/sections/home/section1
+  include templates/sections/home/section2
 
-    //- Footer
-    include templates/footer
-
-    //- Scripts
-    include templates/scripts
-    script(src="scripts/pages/home.js")
+block scripts
+  script(src="scripts/pages/home.js")
