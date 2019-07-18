@@ -90,6 +90,24 @@ const FirebaseComponent = {
   remove(source, id) {
     let ref = firebase.database().ref(`${source}/${id}`);
     return ref.remove();
+  },
+
+  /**
+   *
+   * @param {String} email email
+   * @param {String} password password
+   */
+  signUp(email, password) {
+    return firebase.auth().createUserWithEmailAndPassword(email, password);
+  },
+
+  /**
+   *
+   * @param {String} email email
+   * @param {String} password password
+   */
+  signIn(email, password) {
+    return firebase.auth().signInWithEmailAndPassword(email, password);
   }
 };
 
